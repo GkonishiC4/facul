@@ -123,15 +123,38 @@
 
 # exe 1 
 
-# def is_palindrome(palavra):
-#     palavra = palavra.lower()
-#     palavra = palavra.replace(" ","")
-#     return palavra == palavra[::-1]
+def is_palindrome(palavra):
+    palavra = palavra.lower()
+    palavra = palavra.replace(" ","")
+    palavra = palavra.replace(",","")
+    palavra = palavra.replace(".","")
+    palavra = palavra.replace("?","")
+    palavra = palavra.replace("!","")
+    palavra = palavra.replace("@","")
+    palavra = palavra.replace("#","")
+    palavra = palavra.replace("$","")
+    palavra = palavra.replace("%","")
+    palavra = palavra.replace("^","")
+    palavra = palavra.replace("&","")
+    palavra = palavra.replace("*","")
+    palavra = palavra.replace("-","")
+    palavra = palavra.replace("_","")
+    palavra = palavra.replace("+","")
+    palavra = palavra.replace("=","")
+    palavra = palavra.replace("/","")
+    palavra = palavra.replace("{","")
+    palavra = palavra.replace("}","")
+    palavra = palavra.replace("|","")
+    palavra = palavra.replace("~","")
+    palavra = palavra.replace("´","")
+    palavra = palavra.replace("`","")
+    palavra = palavra.replace("^","")
+    return palavra == palavra[::-1]
 
 
-# print(is_palindrome("arara")) 
-# print(is_palindrome("saippuakivikauppias")) 
-# print(is_palindrome("python")) 
+
+print(is_palindrome("arara")) 
+print(is_palindrome("A Rita, sobre vovo, verbos atira")) 
 
 
 
@@ -184,7 +207,6 @@
 # largest_product = adjacentElementsProduct(inputArray)
 # print(largest_product)
 
-
 #dicionario
 #exec1
 # import random
@@ -217,29 +239,28 @@
 
 
 #exec1.1
+# import random
+# import string
 
-import random
-import string
+# alunos = ["Ana Maria", "João Silva", "Maria Santos", "Carlos Roberto"]
 
-alunos = ["Ana Maria", "João Silva", "Maria Santos", "Carlos Roberto"]
+# usuarios = {}
 
-usuarios = {}
+# for aluno in alunos:
+#     partes = aluno.split()
+#     primeiro_nome = partes[0]
+#     sobrenome = partes[-1]
 
-for aluno in alunos:
-    partes = aluno.split()
-    primeiro_nome = partes[0]
-    sobrenome = partes[-1]
+#     username = primeiro_nome[0].lower() + sobrenome.lower()
+#     if username in usuarios: 
+#         username += str(random.randint(1, 100))
 
-    username = primeiro_nome[0].lower() + sobrenome.lower()
-    if username in usuarios: 
-        username += str(random.randint(1, 100))
+#     caracteres = string.ascii_letters + string.digits + string.punctuation
+#     senha = ''.join(random.choice(caracteres) for i in range(8))
 
-    caracteres = string.ascii_letters + string.digits + string.punctuation
-    senha = ''.join(random.choice(caracteres) for i in range(8))
+#     usuarios[aluno] = {'username': username, 'senha': senha}
 
-    usuarios[aluno] = {'username': username, 'senha': senha}
+# usuarios_ordenados = dict(sorted(usuarios.items()))
 
-usuarios_ordenados = dict(sorted(usuarios.items()))
-
-for nome, dados in usuarios_ordenados.items():
-    print(f"Atividade Prática\nNome: {nome}\nUsername: {dados['username']}\nSenha: {dados['senha']}\n")
+# for nome, dados in usuarios_ordenados.items():
+#     print(f"Atividade Prática\nNome: {nome}\nUsername: {dados['username']}\nSenha: {dados['senha']}\n")
