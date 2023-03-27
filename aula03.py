@@ -152,7 +152,6 @@ def is_palindrome(palavra):
     return palavra == palavra[::-1]
 
 
-
 print(is_palindrome("arara")) 
 print(is_palindrome("A Rita, sobre vovo, verbos atira")) 
 
