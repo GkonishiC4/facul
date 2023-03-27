@@ -1,4 +1,4 @@
-# tam = 6 
+# tam = 6
 # vetor=[0] * tam
 
 # for i in range(tam):
@@ -32,9 +32,7 @@
 # print(f"Qnt de num positivos: {num_positivo}")
 
 
-
-
-# #exec 2 
+# #exec 2
 # import random
 
 # dimensao = 10
@@ -51,12 +49,11 @@
 #     print()
 
 
-
-# #exec 3 
+# #exec 3
 # aprovados = 0
-# exames = 0 
-# reprovados = 0 
-# soma_notas = 0 
+# exames = 0
+# reprovados = 0
+# soma_notas = 0
 
 # quantidade = int(input("Digite a quantidade de alunos: "))
 
@@ -80,7 +77,7 @@
 #     else:
 #         situacao = "Reprovado"
 #         reprovados += 1
-    
+
 #     print(f"{nome:<10} {n1:<5.1f} {n2:<5.1f} {media:<7.1f} {situacao:<10}")
 
 #     soma_notas += media
@@ -93,7 +90,7 @@
 # print(f"Quantidade de alunos reprovados: {reprovados}")
 
 
-#exec 4
+# exec 4
 # prd=[]
 
 # for i in range(5):
@@ -118,46 +115,44 @@
 # print(f"Produtos acima de R$100: {acima_100}")
 
 
+# lista
 
-## lista 
+# exe 1
 
-# exe 1 
-
-def is_palindrome(palavra):
-    palavra = palavra.lower()
-    palavra = palavra.replace(" ","")
-    palavra = palavra.replace(",","")
-    palavra = palavra.replace(".","")
-    palavra = palavra.replace("?","")
-    palavra = palavra.replace("!","")
-    palavra = palavra.replace("@","")
-    palavra = palavra.replace("#","")
-    palavra = palavra.replace("$","")
-    palavra = palavra.replace("%","")
-    palavra = palavra.replace("^","")
-    palavra = palavra.replace("&","")
-    palavra = palavra.replace("*","")
-    palavra = palavra.replace("-","")
-    palavra = palavra.replace("_","")
-    palavra = palavra.replace("+","")
-    palavra = palavra.replace("=","")
-    palavra = palavra.replace("/","")
-    palavra = palavra.replace("{","")
-    palavra = palavra.replace("}","")
-    palavra = palavra.replace("|","")
-    palavra = palavra.replace("~","")
-    palavra = palavra.replace("´","")
-    palavra = palavra.replace("`","")
-    palavra = palavra.replace("^","")
-    return palavra == palavra[::-1]
-
-
-print(is_palindrome("arara")) 
-print(is_palindrome("A Rita, sobre vovo, verbos atira")) 
+# def is_palindrome(palavra):
+#     palavra = palavra.lower()
+#     palavra = palavra.replace(" ","")
+#     palavra = palavra.replace(",","")
+#     palavra = palavra.replace(".","")
+#     palavra = palavra.replace("?","")
+#     palavra = palavra.replace("!","")
+#     palavra = palavra.replace("@","")
+#     palavra = palavra.replace("#","")
+#     palavra = palavra.replace("$","")
+#     palavra = palavra.replace("%","")
+#     palavra = palavra.replace("^","")
+#     palavra = palavra.replace("&","")
+#     palavra = palavra.replace("*","")
+#     palavra = palavra.replace("-","")
+#     palavra = palavra.replace("_","")
+#     palavra = palavra.replace("+","")
+#     palavra = palavra.replace("=","")
+#     palavra = palavra.replace("/","")
+#     palavra = palavra.replace("{","")
+#     palavra = palavra.replace("}","")
+#     palavra = palavra.replace("|","")
+#     palavra = palavra.replace("~","")
+#     palavra = palavra.replace("´","")
+#     palavra = palavra.replace("`","")
+#     palavra = palavra.replace("^","")
+#     return palavra == palavra[::-1]
 
 
+# print(is_palindrome("arara"))
+# print(is_palindrome("A Rita, sobre vovo, verbos atira"))
 
-# exe 2 
+
+# exe 2
 # vetor=[]
 
 # for i in range(15):
@@ -193,11 +188,11 @@ print(is_palindrome("A Rita, sobre vovo, verbos atira"))
 
 # #exec 3
 # def adjacentElementsProduct(inputArray):
-#     maior_produto = float('-inf') 
+#     maior_produto = float('-inf')
 
 #     for i in range(len(inputArray)-1):
-#         produto_atual = inputArray[i] * inputArray[i+1] 
-#         if produto_atual > maior_produto: 
+#         produto_atual = inputArray[i] * inputArray[i+1]
+#         if produto_atual > maior_produto:
 #             maior_produto = produto_atual
 
 #     return maior_produto
@@ -206,35 +201,33 @@ print(is_palindrome("A Rita, sobre vovo, verbos atira"))
 # largest_product = adjacentElementsProduct(inputArray)
 # print(largest_product)
 
-#dicionario
-#exec1
-# import random
-# import string
+# dicionario
+# exec1
+import random
+import string
 
-# alunos = ["Ana Maria", "João Silva", "Maria Santos", "Carlos Roberto"]
+alunos = ["Ana Maria", "João Silva", "Maria Santos", "Carlos Roberto"]
 
-# usuarios = {}
+usuarios = {}
 
-# for aluno in alunos:
-#     partes = aluno.split()
-#     primeiro_nome = partes[0]
-#     sobrenome = partes[-1]
+for aluno in alunos:
+    partes = aluno.split()
+    primeiro_nome = partes[0]
+    sobrenome = partes[-1]
+
+     username = primeiro_nome[0].lower() + sobrenome.lower()
+     if username in usuarios:
+        username += str(random.randint(1, 100))
+
+
+   caracteres = string.ascii_letters + string.digits + string.punctuation
+     senha = ''.join(random.choice(caracteres) for i in range(8))
 
     
-#     username = primeiro_nome[0].lower() + sobrenome.lower()
-#     if username in usuarios:
-#         username += str(random.randint(1, 100))
+     usuarios[username] = senha
 
-    
-#     caracteres = string.ascii_letters + string.digits + string.punctuation
-#     senha = ''.join(random.choice(caracteres) for i in range(8))
-
-    
-#     usuarios[username] = senha
-
-
-# for username, senha in usuarios.items():
-#     print("Username: " + username + " - Senha: " + senha)
+for username, senha in usuarios.items():
+     print("Username: " + username + " - Senha: " + senha)
 
 
 #exec1.1
