@@ -268,29 +268,41 @@ import csv
 import random
 import string
 
-alunos = ["Ana Maria", "João Silva", "Maria Santos", "Carlos Roberto","Letícia Souza Pereira","Camila Cardoso Fernandes","Mariana Lima Almeida","Igor Melo Cardoso","Fabricio Gustavo Henrique","Fabio Henrique"]
+nomes = ['Maria', 'João', 'Ana', 'Pedro', 'Carlos', 'Mariana', 'Lucas', 'Luisa', 'Gustavo', 'Julia']
+sobrenomes = ['Silva', 'Santos', 'Oliveira', 'Souza', 'Pereira', 'Ferreira', 'Gonçalves', 'Ribeiro', 'Almeida', 'Martins']
+
+alunos = []
+for i in range(100):
+    nome = random.choice(nomes)
+    sobrenome = random.choice(sobrenomes)
+    nome_completo = f"{nome} {sobrenome}"
+    alunos.append(nome_completo)
 
 usuarios = {} 
+usernames_gerados = set()
 
 for aluno in alunos:
-     partes = aluno.split()
-     primeiro_nome = partes[0]
-     sobrenome = partes[-1]
+    partes = aluno.split()
+    primeiro_nome = partes[0]
+    sobrenome = partes[-1]
 
-     username = primeiro_nome[0].upper() + sobrenome.lower()
+    username = primeiro_nome[0].upper() + sobrenome.lower()
+    contador = 0
+    while username in usernames_gerados: 
+        contador += 1
+        username = primeiro_nome[0].upper() + sobrenome.lower() + str(contador)
 
-     caracteres = string.ascii_letters + string.digits + string.punctuation
-     senha = ''.join(random.choice(caracteres) for i in range(8))
+    usernames_gerados.add(username)  # adiciona o username gerado ao conjunto de usernames já gerados
 
-     usuarios[aluno] = {'username': username, 'senha': senha}
+    caracteres = string.ascii_letters + string.digits + string.punctuation
+    senha = ''.join(random.choice(caracteres) for i in range(16))
+
+    usuarios[aluno] = {'username': username, 'senha': senha}
 
 usuarios_ordenados = dict(sorted(usuarios.items()))
 
-with open('usuarios41.csv', mode='w', newline='') as file:
+with open('usuarios131.csv', mode='w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(['Nome', 'Username', 'Senha'])
     for nome, dados in usuarios_ordenados.items():
         writer.writerow([nome, dados['username'], dados['senha']])
-
-# for nome, dados in usuarios_ordenados.items():
-#      print(f"Nome: {nome}\nUsername: {dados['username']}\nSenha: {dados['senha']}\n")
