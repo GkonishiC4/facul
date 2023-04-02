@@ -168,23 +168,6 @@
 # for valor in vetor:
 #     print(valor)
 
-# #exe2
-# vetor = []
-
-# for i in range(15):
-#     valor = int(input(f"Digite o valor da posição {i}: "))
-#     vetor.append(valor)
-
-
-# maior_valor = max(vetor)
-
-# for i in range(len(vetor)):
-#     vetor[i] /= maior_valor
-
-# print("Valores após os cálculos:")
-# for valor in vetor:
-#     print(valor)
-
 
 # #exec 3
 # def adjacentElementsProduct(inputArray):
