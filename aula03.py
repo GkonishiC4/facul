@@ -50,12 +50,12 @@
 
 
 # #exec 3
-# aprovados = 0
-# exames = 0
-# reprovados = 0
-# soma_notas = 0
+# aprovados=0
+# exames=0
+# reprovados=0
+# soma_notas=0
 
-# quantidade = int(input("Digite a quantidade de alunos: "))
+# quantidade=int(input("Digite a quantidade de alunos: "))
 
 # print(f"{'Nome':<10} {'N1':<5} {'N2':<5} {'Média':<7} {'Situação':<10}")
 
@@ -85,9 +85,9 @@
 # media_classe = soma_notas/quantidade
 # print(f"Média da classe: {media_classe:.1f}")
 
-# print(f"Quantidade de alunos aprovados: {aprovados}")
-# print(f"Quantidade de alunos em exame: {exames}")
-# print(f"Quantidade de alunos reprovados: {reprovados}")
+# print(f"Quantidade de alunos aprovados: {(aprovados/quantidade)*100} %")
+# print(f"Quantidade de alunos em exame: {(exames/quantidade)*100} %")
+# print(f"Quantidade de alunos reprovados: {(reprovados/quantidade)*100} %")
 
 
 # exec 4
@@ -170,19 +170,12 @@
 
 
 # #exec 3
-# def adjacentElementsProduct(inputArray):
-#     maior_produto = float('-inf')
+def adjacent_elements_product(input_array):
+    return max(a * b for a, b in zip(input_array, input_array[1:]))
 
-#     for i in range(len(inputArray)-1):
-#         produto_atual = inputArray[i] * inputArray[i+1]
-#         if produto_atual > maior_produto:
-#             maior_produto = produto_atual
-
-#     return maior_produto
-
-# inputArray = [3, 6, -2, -5, 7, 3]
-# largest_product = adjacentElementsProduct(inputArray)
-# print(largest_product)
+input_array = [3, 6, -2, -5, 7, 3]
+largest_product = adjacent_elements_product(input_array)
+print(largest_product)
 
 # dicionario
 # exec1
@@ -247,45 +240,45 @@
 
 # usuarios_ordenados_csv.to_csv("teste1.csv")
 
-import csv
-import random
-import string
+# import csv
+# import random
+# import string
 
-nomes = ['Maria', 'João', 'Ana', 'Pedro', 'Carlos', 'Mariana', 'Lucas', 'Luisa', 'Gustavo', 'Julia']
-sobrenomes = ['Silva', 'Santos', 'Oliveira', 'Souza', 'Pereira', 'Ferreira', 'Gonçalves', 'Ribeiro', 'Almeida', 'Martins']
+# nomes = ['Maria', 'João', 'Ana', 'Pedro', 'Carlos', 'Mariana', 'Lucas', 'Luisa', 'Gustavo', 'Julia']
+# sobrenomes = ['Silva', 'Santos', 'Oliveira', 'Souza', 'Pereira', 'Ferreira', 'Gonçalves', 'Ribeiro', 'Almeida', 'Martins']
 
-alunos = []
-for i in range(100):
-    nome = random.choice(nomes)
-    sobrenome = random.choice(sobrenomes)
-    nome_completo = f"{nome} {sobrenome}"
-    alunos.append(nome_completo)
+# alunos = []
+# for i in range(100):
+#     nome = random.choice(nomes)
+#     sobrenome = random.choice(sobrenomes)
+#     nome_completo = f"{nome} {sobrenome}"
+#     alunos.append(nome_completo)
 
-usuarios = {} 
-usernames_gerados = set()
+# usuarios = {} 
+# usernames_gerados = set()
 
-for aluno in alunos:
-    partes = aluno.split()
-    primeiro_nome = partes[0]
-    sobrenome = partes[-1]
+# for aluno in alunos:
+#     partes = aluno.split()
+#     primeiro_nome = partes[0]
+#     sobrenome = partes[-1]
 
-    username = primeiro_nome[0].upper() + sobrenome.lower()
-    contador = 0
-    while username in usernames_gerados: 
-        contador += 1
-        username = primeiro_nome[0].upper() + sobrenome.lower() + str(contador)
+#     username = primeiro_nome[0].upper() + sobrenome.lower()
+#     contador = 0
+#     while username in usernames_gerados: 
+#         contador += 1
+#         username = primeiro_nome[0].upper() + sobrenome.lower() + str(contador)
 
-    usernames_gerados.add(username)  # adiciona o username gerado ao conjunto de usernames já gerados
+#     usernames_gerados.add(username)  # adiciona o username gerado ao conjunto de usernames já gerados
 
-    caracteres = string.ascii_letters + string.digits + string.punctuation
-    senha = ''.join(random.choice(caracteres) for i in range(16))
+#     caracteres = string.ascii_letters + string.digits + string.punctuation
+#     senha = ''.join(random.choice(caracteres) for i in range(16))
 
-    usuarios[aluno] = {'username': username, 'senha': senha}
+#     usuarios[aluno] = {'username': username, 'senha': senha}
 
-usuarios_ordenados = dict(sorted(usuarios.items()))
+# usuarios_ordenados = dict(sorted(usuarios.items()))
 
-with open('usuarios131.csv', mode='w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(['Nome', 'Username', 'Senha'])
-    for nome, dados in usuarios_ordenados.items():
-        writer.writerow([nome, dados['username'], dados['senha']])
+# with open('usuarios131.csv', mode='w', newline='') as file:
+#     writer = csv.writer(file)
+#     writer.writerow(['Nome', 'Username', 'Senha'])
+#     for nome, dados in usuarios_ordenados.items():
+#         writer.writerow([nome, dados['username'], dados['senha']])
